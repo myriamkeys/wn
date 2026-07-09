@@ -3,141 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seleccion de Vinos</title>
+    <title>Restaurante Alfredo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles-referencia.css" />
+    <link rel="stylesheet" href="./landing.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero hero--reference">
-        <div class="hero__copy">
-          <div class="hero__topbar">
-            <div class="language-switcher" role="group" aria-label="Idioma">
-              <button type="button" class="language-pill is-active" data-language-button data-language="es">ES</button>
-              <button type="button" class="language-pill" data-language-button data-language="en">EN</button>
-              <button type="button" class="language-pill" data-language-button data-language="fr">FR</button>
-            </div>
-          </div>
-          <p class="hero__venue" data-i18n="heroVenue">Vinoteca Restaurante Alfredo</p>
-          <h1 data-i18n-html="heroTitle">Vinos con <span>alma</span></h1>
-          <p class="hero__text" data-i18n="heroText">
-            Doce botellas que cuentan la historia del terruno espanol. Usa los filtros para encontrar tu maridaje
-            perfecto.
-          </p>
-        </div>
-      </header>
+    <main class="landing-hero">
+      <div class="landing-hero__overlay" aria-hidden="true"></div>
 
-      <main class="catalog-layout">
-        <div class="catalog-toolbar">
-          <div>
-            <p class="catalog-toolbar__label" data-i18n="catalogLabel">Catalogo</p>
-            <h2 data-toolbar-title data-i18n="catalogHeading">Explora la seleccion</h2>
-          </div>
-          <button type="button" class="filter-drawer-button" data-open-filters>
-            <span class="filter-drawer-button__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4 7h16M7 12h10M10 17h4" />
-              </svg>
-            </span>
-            <span data-i18n="openFilters">Abrir filtros</span>
-          </button>
-        </div>
-
-        <section class="active-filters-bar">
-          <div class="active-filters" data-active-filters>
-            <p class="active-filters__empty" data-i18n="emptyActiveFilters">Sin filtros activos. Explora toda la seleccion.</p>
-          </div>
-        </section>
-
-        <div class="catalog-grid catalog-grid--reference">
-          <aside class="filters-panel" data-filters-root>
-            <div class="filters-panel__header">
-              <div>
-               <!-- <p class="catalog-toolbar__label" data-i18n="filtersTitle">Filtros</p>-->
-                <h2 data-i18n="filterHeading">Filtros</h2>
-              </div>
-              <button type="button" class="text-button" data-clear-all hidden>
-                <span data-i18n="clearAll">Limpiar todo</span>
-              </button>
-            </div>
-
-            <div class="filters-groups" data-filter-groups></div>
-          </aside>
-
-          <section class="product-grid product-grid--reference" aria-label="Lista de vinos" data-product-grid></section>
-        </div>
-      </main>
-    </div>
-
-    <div class="mobile-filters-modal" data-mobile-filters hidden>
-      <div class="mobile-filters-modal__panel">
-        <div class="mobile-filters-modal__header">
-          <h2 data-i18n="filtersTitle">Filtros</h2>
-          <button type="button" class="modal-close modal-close--sheet modal-close--sheet-top" data-close-filters aria-label="Cerrar">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div data-mobile-filter-groups></div>
-        <div class="mobile-filters-actions">
-          <button type="button" class="secondary-button" data-mobile-clear-all>
-            <span data-i18n="clearAll">Limpiar todo</span>
-          </button>
-          <button type="button" class="primary-button" data-apply-filters>
-            <span data-i18n="apply">Aplicar</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-backdrop" data-modal hidden>
-      <div class="wine-modal wine-modal--reference" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="wine-modal__image wine-modal__image--reference" data-modal-image>
-          <button type="button" class="modal-close modal-close--icon" data-close-modal aria-label="Cerrar">
-            <span aria-hidden="true">×</span>
-          </button>
-          <div class="wine-modal__headline">
-            <span data-modal-family></span>
-            <h2 id="modal-title" data-modal-name></h2>
-            <p data-modal-zone></p>
-          </div>
-        </div>
-
-        <div class="wine-modal__body">
-          <p class="wine-modal__description" data-modal-description></p>
-
-          <div class="wine-modal__details wine-modal__details--reference">
-<div>
-              <span data-i18n="grape">Uva</span>
-              <strong data-modal-variety></strong>
-            </div>
-            <div>
-              <span data-i18n="body">Cuerpo</span>
-              <strong data-modal-body></strong>
-            </div>
-            <div>
-              <span data-i18n="serving">Servicio</span>
-              <strong data-modal-serving></strong>
-            </div>
-            <div>
-              <span data-i18n="pairing">Maridaje</span>
-              <strong data-modal-pairing></strong>
-            </div>
-            <div class="price">
-              <span data-i18n="price">Precio</span>
-              <strong data-modal-price></strong>
-            </div>
-          </div>
-
-          <div class="tasting-notes tasting-notes--reference" data-modal-tags></div>
-        </div>
-      </div>
-    </div>
-
-    <script src="./script.js"></script>
+      <section class="landing-hero__content" aria-label="Presentacion de Restaurante Alfredo">
+        <img
+          class="landing-hero__logo"
+          src="./assets/restaurante-alfredo-logo.png"
+          alt="Logo de Restaurante Alfredo"
+        />
+        <p class="landing-hero__title">Restaurante Alfredo</p>
+        <a class="landing-hero__button" href="./wn/">Ir a la vinoteca</a>
+      </section>
+    </main>
   </body>
 </html>
